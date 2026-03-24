@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil Profesional - Rodrigo Sandoval</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="card" id="profileCard">
+      <h1 id="userName">Rodrigo Sandoval Musito</h1>
+
+      <div class="info-group">
+        <div class="info-item">
+          <label>📍 Ubicación</label>
+          <span>Ciudad de Puebla</span>
+        </div>
+        <div class="info-item">
+          <label>🎓 Carrera</label>
+          <span>Ingeniería en Desarrollo de Software</span>
+        </div>
+        <div class="info-item">
+          <label>🏛️ Universidad</label>
+          <span>Universidad Tecmilenio</span>
+        </div>
+      </div>
+
+      <button class="btn-interact" onclick="celebrate()">¡Saludar!</button>
+    </div>
+
+    <script>
+      const card = document.getElementById("profileCard");
+
+      // Efecto visual de inclinación (Tilt)
+      document.addEventListener("mousemove", (e) => {
+        let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+        let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+        card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+      });
+
+      // Interactividad al hacer clic
+      function celebrate() {
+        const name = document.getElementById("userName");
+        name.style.color = "#00ff88";
+        alert(
+          "¡Hola, Rodrigo! Éxito en tus proyectos de software en la Tecmilenio.",
+        );
+        setTimeout(() => {
+          name.style.color = "#ffffff";
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>
